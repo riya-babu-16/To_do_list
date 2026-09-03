@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskBoard - Responsive Task Management App</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Main Header -->
+    <header class="app-header">
+      <div class="header-title">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 11 12 14 22 4"></polyline>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </div>
+        <div>
+          <h1>TaskBoard</h1>
+          <p class="subtitle">Keep track of your daily goals effortlessly</p>
+        </div>
+      </div>
+
+      <!-- Task Counter Dashboard -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <span class="stat-value" id="totalCount">0</span>
+          <span class="stat-label">Total Tasks</span>
+        </div>
+        <div class="stat-card highlight">
+          <span class="stat-value" id="completedCount">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <form id="taskForm">
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="taskInput" 
+            placeholder="Add a new task..." 
+            autocomplete="off"
+            required
+          >
+          <button type="submit" id="addBtn" aria-label="Add Task">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Add Task</span>
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Filters & Action Bar -->
+    <div class="controls-bar">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <button id="clearCompletedBtn" class="clear-btn" title="Clear completed tasks">
+        Clear Completed
+      </button>
+    </div>
+
+    <!-- Task List Container -->
+    <main class="list-section">
+      <ul id="taskList" class="task-list">
+        <!-- Tasks dynamically rendered here by JavaScript -->
+      </ul>
+
+      <!-- Empty State Graphic -->
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <path d="m9 16 2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3>No tasks yet</h3>
+        <p>Add a task above to get started with your day!</p>
+      </div>
+    </main>
+
+    <!-- App Footer -->
+    <footer class="app-footer">
+      <p>Organize your tasks &bull; Built with HTML, CSS &amp; JS</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
